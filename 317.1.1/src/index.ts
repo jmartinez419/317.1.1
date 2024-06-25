@@ -1,8 +1,9 @@
 class Vehicle {
-    public status:string = "stopped"
+    public status:string = ""
     public make:string;
     public model:string;
-    public wheels:string;
+    public wheels:number;
+
     
     constructor(make:string, model:string, wheels:number) {
       this.make = make;
@@ -16,10 +17,13 @@ class Vehicle {
     stop() {
       this.status = "stopped";
     }
+    running() {
+      this.status = "running"
+    }
   }
   
   class Car extends Vehicle {
-    constructor(make:string, model:string) {
+    constructor(make:string, model:string,) {
       super(make, model, 4);
     }
   }
@@ -30,7 +34,8 @@ class Vehicle {
     }
   }
   
-  function printStatus(vehicle:string) {
+  function printStatus(vehicle: Vehicle) {
+    
     if (vehicle.status === "running") {
       console.log("The vehicle is running.");
     } else {
@@ -41,7 +46,7 @@ class Vehicle {
   const myHarley = new MotorCycle("Harley-Davidson", "Low Rider S");
   myHarley.start();
   printStatus(myHarley);
-  console.log(myHarley.make.toUppercase());
+  console.log(myHarley.make.toUpperCase());
   
   const myBuick = new Car("Buick", "Regal");
   myBuick.wheels = myBuick.wheels - 1;
