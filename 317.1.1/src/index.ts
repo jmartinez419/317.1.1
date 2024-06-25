@@ -52,3 +52,32 @@ class Vehicle {
   myBuick.wheels = myBuick.wheels - 1;
   console.log(myBuick.wheels);
   console.log(myBuick.model);
+
+  class Ncycle <T>{
+    
+    public status:string = ""
+    public make:T;
+    public model:T;
+    public wheels:number;
+
+    
+    constructor(make:T, model:T, wheels:number) {
+      this.make = make;
+      this.model = model;
+      this.wheels = wheels;
+      
+    }
+    start() {
+      this.status = "started";
+    }
+    stop() {
+      this.status = "stopped";
+    }
+    running() {
+      this.status = "running"
+    }
+    print() {
+      
+    }
+
+  }
